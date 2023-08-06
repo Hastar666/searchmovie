@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game of Thrones Items</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1><%= name.toUpperCase() %></h1>
+    <div id="itemsContainer">
+      <% items.forEach(item => { %>
+      <div class="card">
+        <h2><%= item.l %></h2>
+        <% if (item.i && item.i.imageUrl) { %>
+        <img src="<%= item.i.imageUrl %>" alt="<%= item.l %>" />
+        <% } %> <% if (item.q) { %>
+        <p class="info"><span>Type:</span> <%= item.q %></p>
+        <% } %> <% if (item.y) { %>
+        <p class="info"><span>Year:</span> <%= item.y %></p>
+        <% } %> <% if (item.s) { %>
+        <p class="info"><span>Stars:</span> <%= item.s %></p>
+        <% } %>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>
